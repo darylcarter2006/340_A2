@@ -4,7 +4,7 @@ A RESTful CRUD API for characters from **The Amazing World of Gumball** (the Wat
 
 ## Live API
 
-**Base URL:** _RENDER_URL_PLACEHOLDER_/api/characters
+**Base URL:** [https://three40-a2.onrender.com/api/characters](https://three40-a2.onrender.com/api/characters)
 
 > **Note:** This runs on Render's free tier, which puts the service to sleep when it is idle. The first request after a period of inactivity can take **up to a minute** while the service wakes up. Later requests are fast.
 
