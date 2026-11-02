@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Character Gallery</title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<nav id="site-nav"></nav>
+
+<main>
+  <h1>Gumball Character Gallery</h1>
+  <div id="flash"></div>
+
+  <form id="search-form" class="search-bar">
+    <input type="text" id="search-name" name="name" placeholder="Search by name..." aria-label="Search by name">
+    <select id="search-species" name="species" aria-label="Filter by species">
+      <option value="">All Species</option>
+    </select>
+    <button type="submit">Search</button>
+    <button type="button" id="clear-search" class="secondary">Clear</button>
+  </form>
+
+  <div id="status" class="status"></div>
+  <div id="character-grid" class="character-grid"></div>
+</main>
+
+<script type="module" src="/js/gallery.js"></script>
+</body>
+</html>

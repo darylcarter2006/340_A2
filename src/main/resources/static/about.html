@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About</title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<nav id="site-nav"></nav>
+
+<main class="about-container">
+  <h1>About This Website</h1>
+
+  <img src="/images/gumball.jpg" alt="Gumball Watterson">
+
+  <p>This website is a class project built around "The Amazing World of Gumball". I chose it because it has a large cast of colorful, easy-to-describe characters. It started as a static HTML and CSS gallery in Assignment 2, became a REST API with a database in Assignment 3, and in Assignment 4 the two are joined: the search bar and the form now really work.</p>
+
+  <p>You can browse every character in the gallery, search by name, filter by species, open a character's details page, add a new character, edit an existing one, and delete one after confirming. Every change is saved in the database.</p>
+
+  <h2>How This App Is Built</h2>
+
+  <p>The app is one Spring Boot service with three layers. A <strong>repository</strong> (Spring Data JPA) reads and writes the characters table in a Neon PostgreSQL database. A <strong>service</strong> holds the rules, such as filtering and updating. A <strong>REST controller</strong> exposes the service as JSON at <code>/api/characters</code>.</p>
+
+  <p>The pages you are looking at are plain HTML files that Spring Boot serves from the same app. Each page runs a small JavaScript module that calls the API with <code>fetch</code>, then builds the page in your browser from the JSON it gets back. All of the <code>fetch</code> calls live in one file, <code>api.js</code>, and one shared script builds the navigation bar on every page. Because the pages and the API come from the same origin, no extra configuration is needed, and the whole thing deploys as a single Docker service on Render.</p>
+</main>
+
+<script type="module" src="/js/about.js"></script>
+</body>
+</html>
