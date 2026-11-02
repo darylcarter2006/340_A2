@@ -37,6 +37,9 @@ public class GumballCharacter {
     @PositiveOrZero(message = "Age cannot be negative")
     private Integer age;
 
+    // Web link or local path such as /images/gumball.jpg (may be empty)
+    private String imageUrl;
+
     public GumballCharacter() {
     }
 
@@ -94,5 +97,13 @@ public class GumballCharacter {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

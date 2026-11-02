@@ -59,6 +59,7 @@ public class GumballCharacterService {
         existing.setSpecies(updated.getSpecies());
         existing.setRole(updated.getRole());
         existing.setAge(updated.getAge());
+        existing.setImageUrl(updated.getImageUrl());
         return repository.save(existing);
     }
 

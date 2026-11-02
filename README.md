@@ -20,6 +20,7 @@ Table name: `characters`
 | `species`     | String  | Optional, e.g. `Cat`, `Goldfish`, `Rabbit` |
 | `role`        | String  | Optional, e.g. `Main Character`, `Mom`  |
 | `age`         | Integer | Optional, must be 0 or greater          |
+| `imageUrl`    | String  | Optional, web link or local path such as `/images/gumball.jpg` |
 
 ## Endpoints
 
