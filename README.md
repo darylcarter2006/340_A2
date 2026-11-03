@@ -2,6 +2,27 @@
 
 A RESTful CRUD API for characters from **The Amazing World of Gumball** (the Watterson family and friends from my Assignment 2 character gallery). Built with Spring Boot, Spring Data JPA, and PostgreSQL (Neon), containerized with Docker, and deployed on Render.
 
+## Live Website
+
+**Home page:** [https://three40-a2.onrender.com/](https://three40-a2.onrender.com/)
+
+The site is a vanilla JavaScript front end (Assignment 4, Track B) served by the same Spring Boot app as the API. Each page is a static HTML file that calls the REST API with `fetch` and builds its content in the browser.
+
+> **Note:** The free Render service may take about a minute to wake up on the first visit. The pages show "Loading..." until the API answers.
+
+### Pages
+
+All files are in `src/main/resources/static/`.
+
+| Page | File | Description |
+|------|------|-------------|
+| Gallery (home) | `index.html` + `js/gallery.js` | Cards for every character, search by name, species filter, "No characters found" message |
+| Details | `details.html` + `js/details.js` | One character, loaded from `?id=`. Has Back, Edit and Delete (with confirmation), and a not-found message |
+| About | `about.html` + `js/about.js` | Project description and how the app is built |
+| Add / Edit form | `character-form.html` + `js/form.js` | Add form, or edit mode when opened with `?id=` (pre-filled, saves with PUT) |
+| Shared code | `js/api.js`, `js/layout.js` | `api.js` holds every `fetch` call; `layout.js` builds the nav bar and the one-time success message |
+| Styles / images | `css/styles.css`, `images/` | Stylesheet, character photos, placeholder image |
+
 ## Live API
 
 **Base URL:** [https://three40-a2.onrender.com/api/characters](https://three40-a2.onrender.com/api/characters)
