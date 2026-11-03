@@ -139,3 +139,125 @@ form button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* ---------- Assignment 4 additions ---------- */
+
+/* Active nav link */
+nav a.active {
+  text-decoration: underline;
+  color: #4fc3f7;
+}
+
+/* Success message shown once after add / update / delete */
+.flash-message {
+  background-color: #e8f5e9;
+  border: 1px solid #81c784;
+  color: #1b5e20;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Loading / empty / error states */
+.status:empty {
+  display: none;
+}
+
+.status {
+  text-align: center;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.status.loading,
+.status.empty {
+  color: #555;
+}
+
+.status.error {
+  background-color: #ffebee;
+  border: 1px solid #e57373;
+  color: #b71c1c;
+}
+
+/* Search bar buttons */
+.search-bar button,
+.button,
+.actions button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4fc3f7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.search-bar button.secondary,
+.button.secondary {
+  background-color: #757575;
+}
+
+.actions button.danger {
+  background-color: #e53935;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Form errors */
+.error-box {
+  background-color: #ffebee;
+  border: 1px solid #e57373;
+  color: #b71c1c;
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+.field-error {
+  display: block;
+  color: #b71c1c;
+  font-size: 14px;
+  min-height: 0;
+}
+
+form[hidden],
+.error-box[hidden] {
+  display: none;
+}
+
+/* Details page text blocks */
+.details-container p {
+  line-height: 1.5;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .search-bar input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+  }
+
+  .details-container img,
+  .about-container img {
+    width: 100%;
+    height: auto;
+    float: none;
+    margin: 0 0 15px 0;
+  }
+}
