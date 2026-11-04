@@ -46,7 +46,12 @@ function fillSpeciesOptions(characters) {
   speciesLoaded = true;
 }
 
+// Only the newest request may update the page, so overlapping searches
+// cannot append their cards on top of each other
+let latestRequest = 0;
+
 async function loadGallery() {
+  const requestId = ++latestRequest;
   grid.replaceChildren();
   showStatus("loading", "Loading...");
 
@@ -55,6 +60,8 @@ async function loadGallery() {
       name: nameInput.value,
       species: speciesSelect.value,
     });
+
+    if (requestId !== latestRequest) return; // a newer search replaced this one
 
     if (!speciesLoaded) fillSpeciesOptions(characters);
 
@@ -68,6 +75,7 @@ async function loadGallery() {
       grid.appendChild(buildCard(character));
     }
   } catch (err) {
+    if (requestId !== latestRequest) return;
     showStatus("error", `Could not load characters. ${err.message}`);
   }
 }
