@@ -1,6 +1,6 @@
-# Gumball Character API
+# Gumball Character Gallery (Web App and REST API)
 
-A RESTful CRUD API for characters from **The Amazing World of Gumball** (the Watterson family and friends from my Assignment 2 character gallery). Built with Spring Boot, Spring Data JPA, and PostgreSQL (Neon), containerized with Docker, and deployed on Render.
+A character gallery website and RESTful CRUD API for characters from **The Amazing World of Gumball** (the Watterson family and friends from my Assignment 2 character gallery). Built with Spring Boot, Spring Data JPA, and PostgreSQL (Neon), containerized with Docker, and deployed on Render. The website is a vanilla JavaScript front end that reads and writes characters through the API.
 
 ## Live Website
 
@@ -86,7 +86,8 @@ Example 400 response:
   "description": "A mischievous 12-year-old cat who lives in Elmore with his family.",
   "species": "Cat",
   "role": "Main Character",
-  "age": 12
+  "age": 12,
+  "imageUrl": "/images/gumball.jpg"
 }
 ```
 
@@ -98,7 +99,8 @@ Example 400 response:
   "description": "A mischievous 12-year-old cat whose big plans usually end in chaos.",
   "species": "Cat",
   "role": "Main Character",
-  "age": 12
+  "age": 12,
+  "imageUrl": "/images/gumball.jpg"
 }
 ```
 
@@ -113,6 +115,12 @@ src/main/java/com/darylcarter/gumball/
 ├── service/GumballCharacterService.java       # Business logic
 ├── controller/GumballCharacterController.java # REST endpoints
 └── exception/                                 # 404 and validation error handling
+
+src/main/resources/static/                     # Front end (see Pages above)
+├── index.html, details.html, about.html, character-form.html
+├── css/styles.css
+├── images/
+└── js/ (api.js, layout.js, gallery.js, details.js, form.js, about.js)
 ```
 
 ## Running Locally
@@ -124,7 +132,7 @@ export SPRING_DATASOURCE_URL="jdbc:postgresql://..."
 ./mvnw spring-boot:run
 ```
 
-The API runs at `http://localhost:8080/api/characters`. The `characters` table is created automatically on the first run.
+The website runs at `http://localhost:8080/` and the API at `http://localhost:8080/api/characters`. Open the pages through this address, not as files from disk. The `characters` table is created automatically on the first run.
 
 ### With Docker
 
